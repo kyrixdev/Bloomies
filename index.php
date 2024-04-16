@@ -62,14 +62,14 @@ include "inc/header.php";
   <div class="row col-12 mt-4">
   <?php
 
-  foreach ($produit as $produits) {
+  foreach ($categories as $categorie) {
 
     print '<div class="col-3 mt-2">
-  <a href="produit.php?id=' . $produits['id'] . '" class="card product-home" style="width: 18rem;">
-      <img src="images/' . $produits['image'] . '" class="card-img-top" alt="...">
+  <a href="produit.php?id=' . $categorie['id'] . '" class="card product-home" style="width: 18rem;">
+      <img src="images/' . $categorie['image'] . '" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">' . $produits['nom'] . '</h5>
-        <p class="card-text"> ' . $produits['description'] . '</p>
+        <h5 class="card-title">' . $categorie['nom'] . '</h5>
+        <p class="card-text"> ' . $categorie['description'] . '</p>
       </div>
     </a>
   </div>';

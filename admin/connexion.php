@@ -3,7 +3,7 @@
 session_start();
 if(isset($_SESSION['nom'])){
 
-  //header('location:profile.php');
+  header('location:profile.php');
 
 }
 
