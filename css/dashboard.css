@@ -1,0 +1,122 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color:#F6F1EB;
+}
+header{
+  background-color:#F6F1EB;
+}
+.nav-link{
+  font-size: medium;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.search-bar{
+  display: none;
+}
+section.hero h1{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.hero p{
+  font-size: 1.2rem;
+
+}
+.hero button{
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #18420e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.hero button:hover{
+  background-color: #124a31;
+}
+.feature{
+  background: #124a31;
+  border-radius: 8px;
+  padding: 1rem;
+  COLOR: WHITE;
+}
+.product-home{
+  width: 18rem;
+  background: antiquewhite;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 22%;
+  border: none;
+  box-shadow: 0 0 140px #0000001a;
+  text-decoration: none;
+}
+.product-home img{
+  padding: 1rem;
+}
+.product-home .card-body{
+  padding: 1rem;
+  text-align: center;
+}
+.product-home .card-title{
+  font-family: "Philosopher", sans-serif;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+section.categories{
+  padding: 5rem 0;
+}
+section.categories h2{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.bi {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+/*
+ * Sidebar
+ */
+
+@media (min-width: 768px) {
+  .sidebar .offcanvas-lg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+  }
+  .navbar-search {
+    display: block;
+  }
+}
+
+.sidebar .nav-link {
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.sidebar .nav-link.active {
+  color: #2470dc;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand > img{
+  width: 45%;
+}
+.navbar .form-control {
+  font-size: small;
+}
