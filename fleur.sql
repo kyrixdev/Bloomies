@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : lun. 08 avr. 2024 à 23:47
--- Version du serveur : 8.2.0
--- Version de PHP : 8.2.13
+-- Host: 127.0.0.1
+-- Generation Time: Apr 16, 2024 at 02:49 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,115 +18,163 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `fleur`
+-- Database: `fleur`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `administrateur`
+-- Table structure for table `administrateur`
 --
 
-DROP TABLE IF EXISTS `administrateur`;
-CREATE TABLE IF NOT EXISTS `administrateur` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `administrateur` (
+  `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `mp` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+  `mp` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `administrateur`
+-- Dumping data for table `administrateur`
 --
 
 INSERT INTO `administrateur` (`id`, `nom`, `email`, `mp`) VALUES
-(1, 'Hadir2', 'hadirbensmaya264@gmail.com', '25d55ad283aa400af464c76d713c07ad');
+(1, 'Hadir2', 'hadirbensmaya264@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
+(2, 'kefi', 'admin@admin.admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categories`
+-- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`;
-CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `createur` int NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `createur` int(11) NOT NULL,
   `date_creation` date NOT NULL,
-  `date_modification` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+  `date_modification` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `categories`
+-- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `nom`, `description`, `createur`, `date_creation`, `date_modification`) VALUES
-(1, 'categorie  ', ' description categorie ', 0, '0000-00-00', '2024-04-02'),
-(11, 'categorie 2', 'description categorie 2', 1, '2024-04-01', '2024-04-02');
+INSERT INTO `categories` (`id`, `nom`, `description`, `image`, `createur`, `date_creation`, `date_modification`) VALUES
+(1, 'Bloom', '  description categorie  ', '1.png', 0, '0000-00-00', '2024-04-16'),
+(16, 'Test  ', ' Test ', '', 2, '2024-04-16', '2024-04-16'),
+(19, 'kefi', 'kefi', '1.jpg', 2, '2024-04-16', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `produit`
+-- Table structure for table `produit`
 --
 
-DROP TABLE IF EXISTS `produit`;
-CREATE TABLE IF NOT EXISTS `produit` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `produit` (
+  `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prix` float NOT NULL,
-  `description` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `image` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `categorie` int NOT NULL,
-  `createur` int NOT NULL,
+  `description` text NOT NULL,
+  `image` text NOT NULL,
+  `categorie` int(11) NOT NULL,
+  `createur` int(11) NOT NULL,
   `date_creation` date NOT NULL,
-  `date_modification` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+  `date_modification` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `produit`
+-- Dumping data for table `produit`
 --
 
 INSERT INTO `produit` (`id`, `nom`, `prix`, `description`, `image`, `categorie`, `createur`, `date_creation`, `date_modification`) VALUES
-(1, 'produit1', 15000, 'description produit 1', '1.jpg', 1, 0, '0000-00-00', '0000-00-00'),
-(2, 'produit 2', 12000, 'description produit 2', '2.jpg', 1, 0, '0000-00-00', '0000-00-00'),
-(3, 'produit3', 8000, 'description3', '3.jpg', 11, 0, '0000-00-00', '0000-00-00'),
-(4, 'produit4', 7000, 'description produit 4', '4.jpg', 1, 0, '0000-00-00', '0000-00-00'),
-(11, '', 0, '', '', 0, 0, '2024-04-05', '0000-00-00'),
-(12, '', 0, '', '', 0, 0, '2024-04-05', '0000-00-00'),
-(13, '', 0, '', '', 0, 0, '2024-04-05', '0000-00-00');
+(1, 'produit1', 15000, 'description produit 1', '1.png', 1, 0, '0000-00-00', '0000-00-00'),
+(2, 'produit 2', 12000, 'description produit 2', '2.png', 1, 0, '0000-00-00', '0000-00-00'),
+(3, 'produit3', 8000, 'description3', '2.png', 11, 0, '0000-00-00', '0000-00-00'),
+(4, 'produit4', 7000, 'description produit 4', '1.png', 1, 0, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `visiteurs`
+-- Table structure for table `visiteurs`
 --
 
-DROP TABLE IF EXISTS `visiteurs`;
-CREATE TABLE IF NOT EXISTS `visiteurs` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `visiteurs` (
+  `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `prenom` varchar(255) NOT NULL,
   `mp` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `telephone` varchar(12) NOT NULL,
-  `etat` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
+  `etat` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `visiteurs`
+-- Dumping data for table `visiteurs`
 --
 
 INSERT INTO `visiteurs` (`id`, `nom`, `prenom`, `mp`, `email`, `telephone`, `etat`) VALUES
 (14, 'aziz', 'ben smaya', 'cf79ae6addba60ad018347359bd144d2', 'AZIZ@gmail.com', '13456', 1),
 (12, 'Hadir', 'Ben smaya', '25f9e794323b453885f5181f1b624d0b', 'hadirbensmaya64@gmail.com', '56083356', 1),
 (13, 'hazar', 'ben smaya ', '4a7d1ed414474e4033ac29ccb8653d9b', 'HAZAR@gmail.com', '12390', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `administrateur`
+--
+ALTER TABLE `administrateur`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `produit`
+--
+ALTER TABLE `produit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `visiteurs`
+--
+ALTER TABLE `visiteurs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `administrateur`
+--
+ALTER TABLE `administrateur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `produit`
+--
+ALTER TABLE `produit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `visiteurs`
+--
+ALTER TABLE `visiteurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
