@@ -32,7 +32,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href=""admin/stocks/liste.php"">
+              <a class="nav-link d-flex align-items-center gap-2" href="admin/stocks/liste.php">
                 <svg class="bi"><use xlink:href="#graph-up"/></svg>
                 stocks
               </a>
