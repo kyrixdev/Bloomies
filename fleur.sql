@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2024 at 02:49 PM
+-- Generation Time: Apr 19, 2024 at 07:40 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,9 +63,57 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `nom`, `description`, `image`, `createur`, `date_creation`, `date_modification`) VALUES
-(1, 'Bloom', '  description categorie  ', '1.png', 0, '0000-00-00', '2024-04-16'),
+(1, 'Bloom  ', '   Bloom categorie   ', '1.png', 0, '0000-00-00', '2024-04-18'),
 (16, 'Test  ', ' Test ', '', 2, '2024-04-16', '2024-04-16'),
-(19, 'kefi', 'kefi', '1.jpg', 2, '2024-04-16', '0000-00-00');
+(19, 'kefi', 'kefi', '1.jpg', 2, '2024-04-16', '0000-00-00'),
+(20, 'Categorie 3    a', '  Categorie 3 Description  a', 'a_97b6b04a47fb41288a89e294efb89367.png  ', 2, '2024-04-18', '2024-04-18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `commandes`
+--
+
+CREATE TABLE `commandes` (
+  `id` int(11) NOT NULL,
+  `produit` int(11) NOT NULL,
+  `quantite` int(11) NOT NULL,
+  `total` float NOT NULL,
+  `panier` int(11) NOT NULL,
+  `date_modification` date NOT NULL,
+  `date_creation` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `commandes`
+--
+
+INSERT INTO `commandes` (`id`, `produit`, `quantite`, `total`, `panier`, `date_modification`, `date_creation`) VALUES
+(8, 1, 2, 2462, 2, '0000-00-00', '2024-04-19'),
+(9, 4, 3, 21000, 3, '0000-00-00', '2024-04-19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `panier`
+--
+
+CREATE TABLE `panier` (
+  `id` int(11) NOT NULL,
+  `visiteur` int(11) NOT NULL,
+  `total` float DEFAULT NULL,
+  `etat` varchar(50) NOT NULL DEFAULT 'En cours',
+  `date_creation` date NOT NULL,
+  `date_modificatiion` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `panier`
+--
+
+INSERT INTO `panier` (`id`, `visiteur`, `total`, `etat`, `date_creation`, `date_modificatiion`) VALUES
+(2, 15, 2462, 'En cours', '2024-04-19', '0000-00-00'),
+(3, 15, 21000, 'En cours', '2024-04-19', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -80,7 +128,7 @@ CREATE TABLE `produit` (
   `description` text NOT NULL,
   `image` text NOT NULL,
   `categorie` int(11) NOT NULL,
-  `createur` int(11) NOT NULL,
+  `stock` int(11) NOT NULL,
   `date_creation` date NOT NULL,
   `date_modification` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -89,10 +137,10 @@ CREATE TABLE `produit` (
 -- Dumping data for table `produit`
 --
 
-INSERT INTO `produit` (`id`, `nom`, `prix`, `description`, `image`, `categorie`, `createur`, `date_creation`, `date_modification`) VALUES
-(1, 'produit1', 15000, 'description produit 1', '1.png', 1, 0, '0000-00-00', '0000-00-00'),
-(2, 'produit 2', 12000, 'description produit 2', '2.png', 1, 0, '0000-00-00', '0000-00-00'),
-(3, 'produit3', 8000, 'description3', '2.png', 11, 0, '0000-00-00', '0000-00-00'),
+INSERT INTO `produit` (`id`, `nom`, `prix`, `description`, `image`, `categorie`, `stock`, `date_creation`, `date_modification`) VALUES
+(1, 'produit1                  ', 1231, '         description produit 1   a      ', '2.png', 1, 0, '0000-00-00', '2024-04-18'),
+(2, 'produit 2        ', 141, '    description produit 2    ', '1.png', 19, 0, '0000-00-00', '2024-04-18'),
+(3, 'produit3      ', 8000, '   description3   ', '2.png', 1, 0, '0000-00-00', '2024-04-18'),
 (4, 'produit4', 7000, 'description produit 4', '1.png', 1, 0, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
@@ -118,7 +166,8 @@ CREATE TABLE `visiteurs` (
 INSERT INTO `visiteurs` (`id`, `nom`, `prenom`, `mp`, `email`, `telephone`, `etat`) VALUES
 (14, 'aziz', 'ben smaya', 'cf79ae6addba60ad018347359bd144d2', 'AZIZ@gmail.com', '13456', 1),
 (12, 'Hadir', 'Ben smaya', '25f9e794323b453885f5181f1b624d0b', 'hadirbensmaya64@gmail.com', '56083356', 1),
-(13, 'hazar', 'ben smaya ', '4a7d1ed414474e4033ac29ccb8653d9b', 'HAZAR@gmail.com', '12390', 0);
+(13, 'hazar', 'ben smaya ', '4a7d1ed414474e4033ac29ccb8653d9b', 'HAZAR@gmail.com', '12390', 1),
+(15, 'Kefi', 'Oussama', '7d74f6896e07adce917c12a416944b0e', 'kefioussama85@gmail.com', '20222', 1);
 
 --
 -- Indexes for dumped tables
@@ -134,6 +183,18 @@ ALTER TABLE `administrateur`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `commandes`
+--
+ALTER TABLE `commandes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `panier`
+--
+ALTER TABLE `panier`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -162,19 +223,31 @@ ALTER TABLE `administrateur`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `commandes`
+--
+ALTER TABLE `commandes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `panier`
+--
+ALTER TABLE `panier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `visiteurs`
 --
 ALTER TABLE `visiteurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
