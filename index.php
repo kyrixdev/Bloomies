@@ -7,8 +7,6 @@ include "inc/functions.php";
 $categories = getAllCategories($conn);
 
 if (isset($_POST['search']) && !empty($_POST['search'])) {
-
-
   $produit = searchProduits($conn, $_POST['search']);
 } else {
   $produit = getAllProducts($conn);
@@ -57,7 +55,7 @@ include "inc/header.php";
   </div>
 </div>
 <section class="categories container">
-  <h2 class="text-center">Categories</h2>
+  <h2 class="text-center">Shop by Category</h2>
   <p class="text-center">Choose from our wide range of categories</p>
   <div class="row col-12 mt-4">
   <?php

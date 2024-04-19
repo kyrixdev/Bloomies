@@ -3,7 +3,7 @@
 session_start();
 if(isset($_SESSION['nom'])){
 
-  header('location:profile.php');
+  header('location:index.php');
 
 }
 
@@ -22,7 +22,7 @@ if (!empty($_POST)) {
       $_SESSION['nom'] = $user['nom'];
       $_SESSION['mp'] = $user['mp'];
     
-      header('location:profile.php');
+      header('location:index.php');
   }}
 ?>
 

@@ -4,11 +4,21 @@ session_start();
 
 //1_recuperation de données du formulaire
 
-
 $id= $_POST['idc'];
 $nom = $_POST['nom'];
 $description = $_POST['description'];
 $date_modification = date("Y-m-d"); //"2024-04-01"
+$target_dir = "../../images/";
+if(!empty($_FILES["image"]["name"])){
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+        $image = $_FILES["image"]["name"];
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}else{
+    $image = $_POST['oldimage'];
+}
 
 // 2_la chaine de connexion 
 function connectM(){
@@ -37,7 +47,7 @@ function connectM(){
 $conn = connectM();
 
 // 3_la creation de la requette
-$requete = "UPDATE categories SET nom='$nom', description='$description' , date_modification='$date_modification' WHERE id='$id'  ";
+$requete = "UPDATE categories SET nom='$nom', description='$description' , date_modification='$date_modification', image='$image' WHERE id='$id'";
 
 // 4_execution de la requette 
 

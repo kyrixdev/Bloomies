@@ -1,38 +1,10 @@
 
 <?php
 
-session_start();
 
+$produitid= $_GET['idc'];
 
-$nom = $_POST['nom'];
-
-$description = $_POST['description'];
-
-$prix = $_POST['prix'];
-
-$stock = $_POST['stock'];
-
-$categorie = $_POST['categorie'];
-
-// uplod image 
-
-$target_dir = "../../images/";
-$target_file = $target_dir . basename($_FILES["image"]["name"]);
-
-if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-   
-        $image = $_FILES["image"]["name"];
-
-
-  } else {
-    echo "Sorry, there was an error uploading your file.";
-  }
-
-$date = date('Y-m-d');
-
-
-// 2_la chaine de connexion 
-function connectT(){
+function connectB(){
 
     // Définir les informations de connexion à la base de données
     define("MONHOST","localhost");
@@ -55,20 +27,20 @@ function connectT(){
 }
 
 // Appel de la fonction connect() pour obtenir la connexion à la base de données
-$conn = connectT();
+$conn = connectB();
 
-// 3_la creation de la requette
-$requete = "INSERT INTO produit(nom,prix,description,image,categorie,stock, date_creation) VALUES ('$nom','$prix', '$description','$image','$categorie','$stock', '$date')";
+$requette= "DELETE FROM produit WHERE id='$produitid' ";
 
-// 4_execution de la requette 
+$resultat = $conn->query($requette);
 
-$resultat = $conn->query($requete);
+if($resultat){
 
-if ($resultat) {
-    header('location:liste.php?ajout=ok');
+    //echo "categorie supprimer ";
+
+    header('location:liste.php?delete=ok');
+
+
 }
-
-
 
 
 

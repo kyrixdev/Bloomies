@@ -8,38 +8,44 @@
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
-                <svg class="bi"><use xlink:href="#house-fill"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/bloomies/admin/index.php">
+                <i data-lucide="layout-grid" class="d-block mb-1"></i>
                 Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="categories/liste.php">
-                <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2" href="/bloomies/admin/categories/liste.php">
+                <i data-lucide="layout-list" class="d-block mb-1"></i>
                 Categories
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="produits/liste.php">
-                <svg class="bi"><use xlink:href="#cart"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2" href="/bloomies/admin/produits/liste.php">
+                <i data-lucide="package-search" class="d-block mb-1"></i>
                 Produits
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="visiteurs/liste.php">
-                <svg class="bi"><use xlink:href="#people"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2" href="/bloomies/admin/visiteurs/liste.php">
+                <i data-lucide="user-search" class="d-block mb-1"></i>
                 User
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="bloomies/admin/stocks/liste.php">
+                <i data-lucide="activity" class="d-block mb-1"></i>
+                stocks
+              </a>
+            </li>
+<!--             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#graph-up"/></svg>
                 Rapport
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 active" href="admin/profile.php">
-                <svg class="bi"><use xlink:href="#puzzle"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2 active" href="/bloomies/admin/profile.php">
+              <i data-lucide="user" class="d-block mb-1"></i>
                 Profile
               </a>
             </li>

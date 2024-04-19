@@ -34,7 +34,7 @@
           <li class="nav-item">
             <?php
             foreach ($categories as $categorie) {
-              print '<li class="nav-item"><a class="nav-link" href="#">' . $categorie['nom'] . '</a></li>';
+              print '<li class="nav-item"><a class="nav-link" href="categorie.php?id='.$categorie['id'].'">' . $categorie['nom'] . '</a></li>';
             }
             ?>
 
@@ -42,7 +42,7 @@
 
           </li>
         </ul>
-        <form class="search-bar" action="index.php" method="POST">
+        <form class="search-bar" action="search.php" method="POST">
           <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success seach-btn" type="submit">Search</button>
         </form>

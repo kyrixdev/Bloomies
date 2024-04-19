@@ -21,6 +21,7 @@ if (!empty($_POST)) {
   $user = ConnectVisiteur($conn, $_POST);
   if ($user !== false) {
       session_start();
+      $_SESSION['id']= $user['id'];
       $_SESSION['email'] = $user['email'];
       $_SESSION['nom'] = $user['nom'];
       $_SESSION['prenom'] = $user['prenom'];

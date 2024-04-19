@@ -103,6 +103,20 @@ $statement = $conn->prepare($requette);
 // Retourner les résultats de la recherche
     return $resultats;
 }
+function getCategorieById($conn,$id){
+    $requette ="SELECT * FROM categories WHERE id =$id  ";
+    $statement = $conn->prepare($requette);
+    $statement->execute();
+    $resultats = $statement->fetch();
+    return $resultats;
+}
+function getProduitByCategorie($conn,$id){
+    $requette ="SELECT * FROM produit WHERE categorie =$id  ";
+    $statement = $conn->prepare($requette);
+    $statement->execute();  
+    $resultats = $statement->fetchAll();
+    return $resultats;
+}
 
 function AddVisiteur($conn, $data) {
     $mphash = md5($data['mp']); // Utilisation correcte de la variable $data['mp']
@@ -183,7 +197,7 @@ function ConnectAdmin($conn,$data){
 }
 
 
-function getAllUsers($conn) {
+function getAllVisitors($conn) {
     try {
         $requete = "SELECT * FROM visiteurs WHERE etat=0";
         $resultat = $conn->query($requete);
@@ -201,6 +215,23 @@ function getAllUsers($conn) {
     }
 }
 
+function getAllUsers($conn) {
+    try {
+        $requete = "SELECT * FROM visiteurs WHERE etat=1";
+        $resultat = $conn->query($requete);
+        if ($resultat === false) {
+            // Gestion des erreurs en cas d'échec de la requête
+            throw new Exception("Erreur lors de l'exécution de la requête.");
+        }
+        // Utilisation de fetchAll pour récupérer toutes les lignes de résultat
+        $users = $resultat->fetchAll();
+        return $users;
+    } catch (Exception $e) {
+        // Gestion des exceptions
+        echo "Erreur: " . $e->getMessage();
+        return false;
+    }
+}
 
 function EditAdmin($conn,$data){
     
@@ -223,6 +254,19 @@ function EditAdmin($conn,$data){
 
 }
 
+function getstocks() {
+
+    $conn = connect();
+    $requete = "SELECT s.id,p.nom,p.quantite FROM produits p , stocks s WHERE p.id = s.produit ";
+
+    $resultat = $conn->query($requete);
+
+    $stocks = $resultat->fetchAll();
+
+    return $stocks;	
+
+
+}
 
 
 
