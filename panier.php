@@ -2,6 +2,9 @@
 session_start();
 include "inc/functions.php";
 
+if (!isset($_SESSION['nom'])) {
+    header('Location: connexion.php');
+}
 $categories= getAllCategories($conn);
 
 if(isset ($_GET['id'])){
@@ -14,10 +17,17 @@ if(isset ($_SESSION['panier'])){
     }
 }
 
+$panierTotal = 0;
+if(isset($_SESSION['panier'])){
+    $panierTotal = $_SESSION['panier'][1];
+}
+
+
 include "inc/header.php";
 
 ?>
-<div class="row col-12 mt-4">
+<div class="container d-flex row justify-content-center">
+<div class="row col-8 mt-4">
     <h2>Panier utilisateur</h2>
     <table class="table">
         <thead>
@@ -31,6 +41,7 @@ include "inc/header.php";
         </thead>
         <tbody>
             <?php 
+            if (isset($commandes)){
             foreach($commandes as $index => $comm){
                 $produit = getProduitById($conn, $comm[0]);
                 print'<tr>
@@ -42,16 +53,25 @@ include "inc/header.php";
                 <td>'.$comm[1].'</td>
                 <td>'.$comm[2].'</td>
                 <td>
-                <a href="actions/supprimer.php?id='.$produit['id'].'" class="btn btn-danger">Supprimer</a>
+                <a href="actions/supprimer.php?id='.$index.'" class="btn btn-danger">Supprimer</a>
                 </td>
                 </tr>';
+            }
             }
             ?>
 
         </tbody>
     </table>
-    <button class="btn btn-primary">Valider</button>
+</div>
+<div class="row col-3 mt-4">
+    <h2>Valider la commande</h2>
+    <div class="total">
+        <h3>Total: <?php echo $panierTotal; ?> </h3>
+    </div>
+    <a href="actions/valider.php" class="btn btn-primary w-50">Valider</a>
+</div>
 
+</div>
 <?php
    include "inc/footer.php";
 ?> 

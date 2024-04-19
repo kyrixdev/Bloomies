@@ -3,6 +3,7 @@ body{
   padding: 0;
   font-family: "Montserrat", sans-serif;
   background-color:#F6F1EB;
+  min-height: 100vh;
 }
 header{
   background-color:#F6F1EB;
@@ -87,7 +88,83 @@ section.categories h2{
   width: 1rem;
   height: 1rem;
 }
+.bg-greeny{
+  top: 56%;
+    position: absolute;
+    right: 0%;
+    background: #18420e !important;
+}
+.title{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+}
+.btn-shop {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #18420e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
 
+}
+.profile-list a{
+  color: black;
+  text-decoration: none;
+}
+.profile-list a:hover{
+  color: #18420e;
+  background-color: lightgray;
+}
+.profile-list .active {
+  color: #fff;
+  background-color: #18420e;
+  border: none;
+}
+.profile-list .active:hover {
+  color: #fff;
+  background-color: #18420e;
+  border: none;
+}
+.btn-login{
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #18420e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  text-transform: capitalize;
+  border: 1px solid #124a31;
+}
+.btn-login:hover{
+  background-color: #fff;
+  color: #18420e; ;
+  border: 1px solid #124a31;
+}
+.btn-register-go{
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #18420e;
+  width: 100% !important;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  text-transform: capitalize;
+  border: 1px solid #124a31;
+  text-decoration: none;
+  margin: .5rem 0 !important;
+  display: block;
+  text-align: center;
+}
 /*
  * Sidebar
  */

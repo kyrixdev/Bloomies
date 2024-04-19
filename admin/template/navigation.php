@@ -32,9 +32,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="bloomies/admin/stocks/liste.php">
+              <a class="nav-link d-flex align-items-center gap-2" href="/bloomies/admin/commande/liste.php">
                 <i data-lucide="activity" class="d-block mb-1"></i>
-                stocks
+                Commande
               </a>
             </li>
 <!--             <li class="nav-item">

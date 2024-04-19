@@ -29,7 +29,7 @@ include "inc/header.php";
  ?>
 
       <!--fin nav-->
-<div class="col-12 p-5">
+<div class="col-5 mx-auto p-5">
     <h1 class="text-center">Registre</h1>
     <form action="registre.php" method="post">
         <div class="mb-3">
@@ -54,7 +54,8 @@ include "inc/header.php";
           <input type="password" name="mp"  class="form-control" id="exampleInputPassword1">
         </div>
         
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" class="btn btn-login w-100">Envoyer</button>
+        <a href="connexion.php" class="btn-register-go">Se connecter</a>
       </form>
 
     </div>

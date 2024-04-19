@@ -133,6 +133,23 @@ function AddVisiteur($conn, $data) {
 }
 
 
+function getVisiteurById ($conn, $id) {
+    try {
+        $requete = "SELECT * FROM visiteurs WHERE id=$id";
+        $resultat = $conn->query($requete);
+        if ($resultat === false) {
+            // Gestion des erreurs en cas d'échec de la requête
+            throw new Exception("Erreur lors de l'exécution de la requête.");
+        }
+        // Utilisation de fetchAll pour récupérer toutes les lignes de résultat
+        $visiteur = $resultat->fetch();
+        return $visiteur;
+    } catch (Exception $e) {
+        // Gestion des exceptions
+        echo "Erreur: " . $e->getMessage();
+        return false;
+    }
+}
 
 
 function ConnectVisiteur($conn, $data) {
@@ -253,22 +270,70 @@ function EditAdmin($conn,$data){
 
 
 }
-
-function getstocks() {
-
-    $conn = connect();
-    $requete = "SELECT s.id,p.nom,p.quantite FROM produits p , stocks s WHERE p.id = s.produit ";
-
-    $resultat = $conn->query($requete);
-
-    $stocks = $resultat->fetchAll();
-
-    return $stocks;	
-
-
+function getAllPanier($conn) {
+    try {
+        $requete = "SELECT * FROM panier";
+        $resultat = $conn->query($requete);
+        if ($resultat === false) {
+            // Gestion des erreurs en cas d'échec de la requête
+            throw new Exception("Erreur lors de l'exécution de la requête.");
+        }
+        // Utilisation de fetchAll pour récupérer toutes les lignes de résultat
+        $commandes = $resultat->fetchAll();
+        return $commandes;
+    } catch (Exception $e) {
+        // Gestion des exceptions
+        echo "Erreur: " . $e->getMessage();
+        return false;
+    }
 }
 
 
+function getCommandePerPanier ($conn, $id) {
+    try {
+        $requete = "SELECT * FROM commandes WHERE panier=$id";
+        $resultat = $conn->query($requete);
+        if ($resultat === false) {
+            // Gestion des erreurs en cas d'échec de la requête
+            throw new Exception("Erreur lors de l'exécution de la requête.");
+        }
+        // Utilisation de fetchAll pour récupérer toutes les lignes de résultat
+        $commandes = $resultat->fetchAll();
+        return $commandes;
+    } catch (Exception $e) {
+        // Gestion des exceptions
+        echo "Erreur: " . $e->getMessage();
+        return false;
+    }
+}
 
+function getPanierByEtat ($etat ,$paniers) {
+    $paniersEtat = array();
 
+    foreach ($paniers as $panier) {
+        if ($panier['etat'] == $etat) {
+            array_push($paniersEtat, $panier);
+        }
+    }
+    return $paniersEtat;
+}
+
+function getPanierByUser ($conn , $id) {
+    try {
+        $requete = "SELECT * FROM panier WHERE visiteur=$id";
+        $resultat = $conn->query($requete);
+        if ($resultat === false) {
+            // Gestion des erreurs en cas d'échec de la requête
+            throw new Exception("Erreur lors de l'exécution de la requête.");
+        }
+        // Utilisation de fetchAll pour récupérer toutes les lignes de résultat
+        $commandes = $resultat->fetchAll();
+        return $commandes;
+    } catch (Exception $e) {
+        // Gestion des exceptions
+        echo "Erreur: " . $e->getMessage();
+        return false;
+    }
+
+}
 ?>

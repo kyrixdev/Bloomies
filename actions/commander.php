@@ -24,18 +24,14 @@ foreach($_SESSION['panier'][3] as $index => $p){
         $_SESSION['panier'][3][$index][2] += $total;
         $_SESSION['panier'][1] += $total;
         header('location:../panier.php');
-        exit();
+        exit(); 
     }
 }
 
 
 $_SESSION['panier'][1] += $total;
 $_SESSION['panier'][3][] = array($id_produit, $qte, $total, $date);
-
-
-echo "<pre>";
-print_r($_SESSION['panier']);
-echo "</pre>";
+header('location:../panier.php');
 
 /* // Creation du panier 
 $requette_panier = "INSERT INTO panier (visiteur,total,date_creation) VALUES ($visiteur, $total, '$date')";

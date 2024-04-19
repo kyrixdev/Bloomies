@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bloomie's Flower Shop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/dashboard.css">
-  <link rel="icon" href="../images/icon.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="/bloomies/css/dashboard.css">
+  <link rel="icon" href="/bloomies/images/icon.png" sizes="32x32" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -69,8 +69,13 @@
           print '<a href="deconnexion.php " class="btn btn-primary">deconnexion</a>';
         }
         ?>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="cart.php"><i data-lucide="shopping-bag" stroke-width="1"></i></a>
+        <li class="nav-item position-relative">
+          <a class="nav-link " aria-current="page" href="panier.php"><i data-lucide="shopping-bag" stroke-width="1"></i></a>
+          <span class="badge bg-greeny position-absolute"><?php if (isset($_SESSION['panier'])) {
+                                        print count($_SESSION['panier'][3]);
+                                      } else {
+                                        print 0;
+                                      } ?></span>
           </li>
         </ul>
       </div>
