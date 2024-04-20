@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2024 at 07:40 AM
+-- Generation Time: Apr 21, 2024 at 01:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `administrateur` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `mp` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -38,9 +39,9 @@ CREATE TABLE `administrateur` (
 -- Dumping data for table `administrateur`
 --
 
-INSERT INTO `administrateur` (`id`, `nom`, `email`, `mp`) VALUES
-(1, 'Hadir2', 'hadirbensmaya264@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
-(2, 'kefi', 'admin@admin.admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `administrateur` (`id`, `nom`, `prenom`, `email`, `mp`) VALUES
+(1, 'Hadir2', '', 'hadirbensmaya264@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
+(2, 'kefi', 'Oussama', 'admin@admin.admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,9 @@ CREATE TABLE `commandes` (
 
 INSERT INTO `commandes` (`id`, `produit`, `quantite`, `total`, `panier`, `date_modification`, `date_creation`) VALUES
 (8, 1, 2, 2462, 2, '0000-00-00', '2024-04-19'),
-(9, 4, 3, 21000, 3, '0000-00-00', '2024-04-19');
+(9, 4, 3, 21000, 3, '0000-00-00', '2024-04-19'),
+(10, 1, 1, 1231, 4, '0000-00-00', '2024-04-21'),
+(11, 1, 1, 1231, 5, '0000-00-00', '2024-04-21');
 
 -- --------------------------------------------------------
 
@@ -112,8 +115,10 @@ CREATE TABLE `panier` (
 --
 
 INSERT INTO `panier` (`id`, `visiteur`, `total`, `etat`, `date_creation`, `date_modificatiion`) VALUES
-(2, 15, 2462, 'En cours', '2024-04-19', '0000-00-00'),
-(3, 15, 21000, 'En cours', '2024-04-19', '0000-00-00');
+(2, 15, 2462, 'Annulee', '2024-04-19', '2024-04-21'),
+(3, 15, 21000, 'En cours', '2024-04-19', '0000-00-00'),
+(4, 15, 1231, 'livraison terminer', '2024-04-21', '2024-04-21'),
+(5, 15, 1231, 'En cours', '2024-04-21', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -139,7 +144,7 @@ CREATE TABLE `produit` (
 
 INSERT INTO `produit` (`id`, `nom`, `prix`, `description`, `image`, `categorie`, `stock`, `date_creation`, `date_modification`) VALUES
 (1, 'produit1                  ', 1231, '         description produit 1   a      ', '2.png', 1, 0, '0000-00-00', '2024-04-18'),
-(2, 'produit 2        ', 141, '    description produit 2    ', '1.png', 19, 0, '0000-00-00', '2024-04-18'),
+(2, 'produit 2          ', 141, '     description produit 2     ', '1.png  ', 1, 12, '0000-00-00', '2024-04-21'),
 (3, 'produit3      ', 8000, '   description3   ', '2.png', 1, 0, '0000-00-00', '2024-04-18'),
 (4, 'produit4', 7000, 'description produit 4', '1.png', 1, 0, '0000-00-00', '0000-00-00');
 
@@ -229,13 +234,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `commandes`
 --
 ALTER TABLE `commandes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `panier`
 --
 ALTER TABLE `panier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `produit`
