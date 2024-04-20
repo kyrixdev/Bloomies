@@ -39,7 +39,7 @@ $TotalPorduits = count($produits);
                 <div class="card admin-stats">
                   <div class="card-body">
                     <div class="card-title">
-                      <i data-lucide="package-search" ></i>
+                      <i data-lucide="users"></i>
                       <div class="title">Les utilisateurs </div>
                     </div>
                     <div class="total"><?php echo $TotalUsers; ?></div>
@@ -50,7 +50,7 @@ $TotalPorduits = count($produits);
                 <div class="card admin-stats">
                   <div class="card-body">
                     <div class="card-title">
-                      <i data-lucide="package-search" ></i>
+                    <i data-lucide="shopping-basket"></i>
                       <div class="title">Les commandes </div>
                     </div>
                     <div class="total"><?php echo $TotalCommandes; ?></div>

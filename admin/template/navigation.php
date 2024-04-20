@@ -33,7 +33,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="/bloomies/admin/commande/liste.php">
-                <i data-lucide="activity" class="d-block mb-1"></i>
+                <i data-lucide="shopping-basket" class="d-block mb-1"></i>
                 Commande
               </a>
             </li>

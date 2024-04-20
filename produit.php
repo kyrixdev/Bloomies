@@ -30,7 +30,11 @@ include "inc/header.php";
             <div class="col-6">
                 <input type="hidden" name="prix" value="<?php echo $produit['prix']; ?>">
                 <input type="hidden" name="produit" value="<?php echo $produit['id']; ?>">
+                <?php if($produit['stock'] > 0){ ?>
                 <button type="submit" class="btn btn-shop mt-2">Ajouter au panier</button>
+                <?php } else { ?>
+                <button type="button" class="btn btn-shop mt-2" disabled>Produit en rupture de stock</button>
+                <?php } ?>
             </div>
           </div>
         </form>

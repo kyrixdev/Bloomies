@@ -150,17 +150,24 @@ include "../template/header.php";
   <div class="mb-3"></div>
 
   <div class="form-group">
+    <label for="description" class="form-label">Description</label>
     <textarea  name="description" class="form-control" placeholder="description de produit..."></textarea>
   </div>
 
   <div class="mb-3"></div>
   <div class="form-group">
+    <label for="prix" class="form-label">Prix</label>
     <input type="number" step="0.01" name="prix" class="form-control" placeholder="prix de produit...">
   </div>
-
+  <div class="mb-3"></div>
+  <div class="form-group">
+    <label for="stock" class="form-label">Stock</label>
+    <input type="number" step="0.01" name="stock" class="form-control" placeholder="stock de produit...">
+  </div>
    
   <div class="mb-3"></div>
   <div class="form-group">
+    <label for="image" class="form-label">Image</label>
     <input type="file" name="image" class="form-control" placeholder="prix de produit...">
   </div>
   
@@ -168,6 +175,7 @@ include "../template/header.php";
 
 <div class="mb-3"></div>
 
+<label for="categorie" class="form-label">Categorie</label>
 
 <select name="categorie" class="form-control">
 
