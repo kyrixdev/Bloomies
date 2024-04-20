@@ -44,9 +44,9 @@ include "inc/header.php";
         <div class="col-lg-3">
           <div class="product">
             <img src="images/<?php print $produit['image']; ?>" alt="product" class="img-fluid">
-            <h3><?php print $produit['nom']; ?></h3>
-            <p><?php print $produit['prix']; ?>$</p>
-            <a href="produit.php?id=<?php print $produit['id']; ?>" class="btn btn-primary">View</a>
+            <p><?php print $produit['nom']; ?></p>
+            <h3><?php print $produit['prix']; ?><span> DT </span> </h3>
+            <a href="produit.php?id=<?php print $produit['id']; ?>" class="btn btn-view">View</a>
           </div>
         </div>
       <?php

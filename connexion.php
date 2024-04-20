@@ -27,6 +27,7 @@ if (!empty($_POST)) {
       $_SESSION['prenom'] = $user['prenom'];
       $_SESSION['mp'] = $user['mp'];
       $_SESSION['telephone'] = $user['telephone'];
+      $_SESSION['role'] = 'visiteur';
       header('location:profile.php');
   }}
 

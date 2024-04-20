@@ -165,6 +165,137 @@ section.categories h2{
   display: block;
   text-align: center;
 }
+.side-panier{
+  background-color: #fff;
+  color: black;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+}
+.side-panier h4{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.side-panier .btn-valider{
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #18420e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  text-transform: capitalize;
+  border: 1px solid #124a31;
+  height: fit-content;
+}
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+}
+.product h3{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  padding: 1rem 0 ;
+}
+.product h3 > span{
+  font-size: large;
+    vertical-align: text-top;
+}
+.product p{
+  font-size:  1.5rem;
+  text-align: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: "Philosopher", sans-serif;
+}
+.btn-view {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #18420e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  text-transform: capitalize;
+  border: 1px solid #124a31;
+
+}
+.btn-view:hover{
+  background-color: #fff;
+  color: #18420e; ;
+  border: 1px solid #124a31;
+}
+.product-card h2{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+}
+.product-card p{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.product-card .prix{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+  padding: 1rem 0 ;
+  font-size: 1.5rem;
+}
+.product-card .prix > span{
+  font-size: large;
+    vertical-align: text-top;
+}
+.side-panier h5{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 900;
+  padding: 1rem 0 ;
+  font-size: 1.5rem;
+}
+.side-panier h5 > span{
+  font-size: large;
+    vertical-align: text-top;
+}
+.product-card .btn-shop{
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #18420e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  text-transform: capitalize;
+  border: 1px solid #124a31;
+}
+.footer{
+  background: #faebd7;
+}
+.footer .footer-link {
+  margin: .5rem 0;
+  list-style: none;
+}
+.footer .footer-link a{
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 600;
+  color: #18420e;
+}
+.footer .footer-item{
+  margin: 0 1rem;
+}
 /*
  * Sidebar
  */

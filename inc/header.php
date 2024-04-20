@@ -63,12 +63,6 @@
                   }
 
         ?>
-
-        <?php
-        if (isset($_SESSION['nom'])) {
-          print '<a href="deconnexion.php " class="btn btn-primary">deconnexion</a>';
-        }
-        ?>
         <li class="nav-item position-relative">
           <a class="nav-link " aria-current="page" href="panier.php"><i data-lucide="shopping-bag" stroke-width="1"></i></a>
           <span class="badge bg-greeny position-absolute"><?php if (isset($_SESSION['panier'])) {
@@ -77,6 +71,17 @@
                                         print 0;
                                       } ?></span>
           </li>
+          
+        <?php
+        if (isset($_SESSION['nom'])) {
+          print '
+          <li class="nav-item">
+          <a href="deconnexion.php " class="nav-link active">
+            <i data-lucide="log-out" stroke-width="1"></i>
+          </a>
+          </li>';
+        }
+        ?>
         </ul>
       </div>
     </div>

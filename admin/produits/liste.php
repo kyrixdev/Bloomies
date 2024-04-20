@@ -239,6 +239,8 @@ foreach($produits as $index => $produit){ ?>
     <label for="prix" class="form-label
     ">Prix</label>
     <input type="text" name="prix" class="form-control" value="<?php  echo $produit['prix'];  ?>  " placeholder="<?php  echo $produit['prix'];  ?> ">
+    <label for="stock" class="form-label">Stock</label>
+    <input type="text" name="stock" class="form-control" value="<?php  echo $produit['stock'];  ?>  " placeholder="<?php  echo $produit['stock'];  ?> ">
     <label for="Img" class="form-label
     ">Image</label>
     <input type="file" name="image" class="form-control" value="<?php  echo $produit['image'];  ?>  " placeholder="<?php  echo $produit['image'];  ?> ">

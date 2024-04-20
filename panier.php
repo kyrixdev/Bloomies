@@ -26,7 +26,7 @@ if(isset($_SESSION['panier'])){
 include "inc/header.php";
 
 ?>
-<div class="container d-flex row justify-content-center">
+<div class="container gap-3 d-flex row justify-content-center mx-auto">
 <div class="row col-8 mt-4">
     <h2>Panier utilisateur</h2>
     <table class="table">
@@ -49,9 +49,9 @@ include "inc/header.php";
                 <img src="images/'.$produit['image'].'" class="img-thumbnail" style="width: 100px;">
                 '.$produit['nom'].'
                 </td>
-                <td>'.$produit['prix'].'</td>
+                <td class="prix">'.$produit['prix'].'</td>
                 <td>'.$comm[1].'</td>
-                <td>'.$comm[2].'</td>
+                <td>'.$comm[2].' Dt</td>
                 <td>
                 <a href="actions/supprimer.php?id='.$index.'" class="btn btn-danger">Supprimer</a>
                 </td>
@@ -63,12 +63,12 @@ include "inc/header.php";
         </tbody>
     </table>
 </div>
-<div class="row col-3 mt-4">
-    <h2>Valider la commande</h2>
+<div class="row col-3 mt-4 side-panier">
+    <h4>Valider la commande</h4>
     <div class="total">
-        <h3>Total: <?php echo $panierTotal; ?> </h3>
+        <h5>Total: <?php echo $panierTotal; ?> <span> DT </span></h5>
     </div>
-    <a href="actions/valider.php" class="btn btn-primary w-50">Valider</a>
+    <a href="actions/valider.php" class="btn btn-valider w-100">Valider</a>
 </div>
 
 </div>

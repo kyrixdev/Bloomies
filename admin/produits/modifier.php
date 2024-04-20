@@ -9,6 +9,7 @@ $nom = $_POST['nom'];
 $description = $_POST['description'];
 $date_modification = date("Y-m-d"); //"2024-04-01"
 $prix = $_POST['prix'];
+$stock = $_POST['stock'];
 $categorie = $_POST['categorie'];
 
 $target_dir = "../../images/";
@@ -50,7 +51,7 @@ function connectM(){
 $conn = connectM();
 
 // 3_la creation de la requette
-    $requete = "UPDATE produit SET nom='$nom', description='$description' , date_modification='$date_modification', image='$image', prix='$prix', categorie='$categorie' WHERE id='$id'";
+    $requete = "UPDATE produit SET nom='$nom', description='$description' , date_modification='$date_modification', image='$image', prix='$prix', categorie='$categorie', stock = '$stock' WHERE id='$id'";
 
 // 4_execution de la requette 
 

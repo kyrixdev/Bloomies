@@ -127,7 +127,7 @@ if(isset($_GET['id'])){
                                 <tr>
                                     <td><?php echo $panier['id']; ?></td>
                                     <td><?php echo $panier['date_creation']; ?></td>
-                                    <td><?php echo $panier['total']; ?></td>
+                                    <td><?php echo $panier['total']; ?> DT</td>
                                     <?php 
                                                     if ($panier['etat'] == "En cours") {
                                                         print '<td><span class="badge bg-warning" >En cours </span></td>';
@@ -227,9 +227,9 @@ foreach($paniers as $panier){
                             <img src="images/<?php echo $produit['image']; ?>" class="img-thumbnail" style="width: 50px;">
                             <?php echo $produit['nom']; ?>
                         </td>
-                        <td><?php echo $produit['prix']; ?></td>
+                        <td><?php echo $produit['prix']; ?> DT</td>
                         <td><?php echo $comm['quantite']; ?></td>
-                        <td><?php echo $comm['total']; ?></td>
+                        <td><?php echo $comm['total']; ?> DT</td>
                     </tr>
                     <?php
                 }

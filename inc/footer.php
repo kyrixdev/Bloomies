@@ -1,9 +1,40 @@
-<div class="bg-dark text-center p-5 mt-4">
-
-    <p class="text-white">
-        Tous les droits réservés 2024
-    </p>
-
+<div class="text-center p-5 mt-4 footer" >
+    <div class="row">
+        <div class="col-3">
+            <img src="images/logo.png" alt="logo" class="img-fluid w-50">
+        </div>
+        <div class="col-3">
+            <h4 class="footer-item">Navigation</h4>
+            <ul>
+                <li class="footer-link"><a href="index.php">Accueil</a></li>
+                <li class="footer-link"><a href="produits.php">Produits</a></li>
+                <li class="footer-link"><a href="contact.php">Contact</a></li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <h4 class="footer-item">Categories</h4>
+            <ul>
+                <?php
+                $categories = getAllCategories($conn);
+                foreach ($categories as $categorie) {
+                    print '<li class="footer-link"><a href="categorie.php?id=' . $categorie['id'] . '">' . $categorie['nom'] . '</a></li>';
+                }
+                ?>
+            </ul>
+        </div>
+        <div class="col-3">
+            <h4 class="footer-item">Reseaux sociaux</h4>
+            <ul>
+                <li class="footer-link"><a href="#">Facebook</a></li>
+                <li class="footer-link"><a href="#">Instagram</a></li>
+                <li class="footer-link"><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="footer-text">Bloomie's Flower Shop &copy; 2024</p>
+        </div>
 </div>
 
 

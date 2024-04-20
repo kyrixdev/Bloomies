@@ -63,7 +63,7 @@ include "inc/header.php";
   foreach ($categories as $categorie) {
 
     print '<div class="col-3 mt-2">
-  <a href="produit.php?id=' . $categorie['id'] . '" class="card product-home" style="width: 18rem;">
+  <a href="categorie.php?id=' . $categorie['id'] . '" class="card product-home" style="width: 18rem;">
       <img src="images/' . $categorie['image'] . '" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">' . $categorie['nom'] . '</h5>

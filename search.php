@@ -43,7 +43,7 @@ include "inc/header.php";
             <img src="images/<?php print $produit['image']; ?>" alt="product" class="img-fluid">
             <h3><?php print $produit['nom']; ?></h3>
             <p><?php print $produit['prix']; ?>$</p>
-            <a href="produit.php?id=<?php print $produit['id']; ?>" class="btn btn-primary">View</a>
+            <a href="produit.php?id=<?php print $produit['id']; ?>" class="btn btn-view">View</a>
           </div>
         </div>
       <?php
@@ -52,3 +52,7 @@ include "inc/header.php";
     </div>
   </div>
 </section>
+
+<?php
+include "inc/footer.php";
+?>

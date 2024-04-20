@@ -336,4 +336,22 @@ function getPanierByUser ($conn , $id) {
     }
 
 }
+
+function getAllCommandes($conn) {
+    try {
+        $requete = "SELECT * FROM commandes";
+        $resultat = $conn->query($requete);
+        if ($resultat === false) {
+            // Gestion des erreurs en cas d'échec de la requête
+            throw new Exception("Erreur lors de l'exécution de la requête.");
+        }
+        // Utilisation de fetchAll pour récupérer toutes les lignes de résultat
+        $commandes = $resultat->fetchAll();
+        return $commandes;
+    } catch (Exception $e) {
+        // Gestion des exceptions
+        echo "Erreur: " . $e->getMessage();
+        return false;
+    }
+}
 ?>
