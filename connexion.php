@@ -27,7 +27,7 @@ if (!empty($_POST)) {
       $_SESSION['prenom'] = $user['prenom'];
       $_SESSION['mp'] = $user['mp'];
       $_SESSION['telephone'] = $user['telephone'];
-      $_SESSION['role'] = 'visiteur';
+      $_SESSION['admin'] = 0;
       header('location:profile.php');
   }}
 
@@ -37,16 +37,18 @@ include "inc/header.php";
 
       <!--fin nav-->
 <div class="col-5 mx-auto p-5">
-      <form action="connexion.php" method="post">
+      <form action="connexion.php" method="post" onsubmit="return validateLoginForm()">
         <h1 class="text-center">Connexion</h1>
+        <div class="alert alert-danger" role="alert" id="alert" style="display: none">
+        </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="text" name="email" class="form-control" id="email">
           
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Mot de passe </label>
-          <input type="password" name="mp" class="form-control" id="exampleInputPassword1">
+          <input type="password" name="mp" class="form-control" id="password">
         </div>
         
         <button type="submit" class="btn btn-login w-100 text-center">connecter</button>

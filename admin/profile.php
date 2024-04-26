@@ -9,8 +9,8 @@ if(isset($_POST['btnEdit'])){
 
 if(EditAdmin($conn,$_POST)){
 
-  $_SESSION['nom'] = $_POST['nom'];
-  $_SESSION['email'] = $_POST['email'];
+  $_SESSION['adminnom'] = $_POST['nom'];
+  $_SESSION['adminemail'] = $_POST['email'];
 
 
 }
@@ -39,15 +39,15 @@ include "template/header.php";
 
         <div>
           <?php
-          echo $_SESSION['nom'];
+          echo $_SESSION['adminnom'];
           ?>
         </div>
       </div>
 
         <div class="container">
 
-                         <h1> Nom : <span class="text-primary"> <?php echo $_SESSION['nom']; ?> </span>   </h1> 
-                        <h1> Email :  <span class="text-primary"><?php echo $_SESSION['email']; ?> </span></h1>
+                         <h1> Nom : <span class="text-primary"> <?php echo $_SESSION['adminnom']; ?> </span>   </h1> 
+                        <h1> Email :  <span class="text-primary"><?php echo $_SESSION['adminemail']; ?> </span></h1>
                         <a data-bs-toggle="modal" data-bs-target="#profileEdit" class="btn btn-primary"> Modifier </a>
                         
         </div>
@@ -68,15 +68,15 @@ include "template/header.php";
       <div class="modal-body">
         <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
           
-        <input type="hidden" value="<?php echo $_SESSION['id']; ?>" name="id_admin">
+        <input type="hidden" value="<?php echo $_SESSION['adminid']; ?>" name="id_admin">
 
-        <div class="form-group"><input type="text" name="nom" value="<?php echo $_SESSION['nom']; ?>" class="form-control" placeholder=" Tapper votre nom ...">
+        <div class="form-group"><input type="text" name="nom" value="<?php echo $_SESSION['adminnom']; ?>" class="form-control" placeholder=" Tapper votre nom ...">
       </div>
 
  <!-- Ajout d'un espace -->
  <div class="mb-3"></div>
 
-        <div class="form-group"><input type="email" name="email" value="<?php echo $_SESSION['email']; ?>" class="form-control" placeholder=" Tapper votre email ..." >
+        <div class="form-group"><input type="email" name="email" value="<?php echo $_SESSION['adminemail']; ?>" class="form-control" placeholder=" Tapper votre email ..." >
       </div>
 
  <!-- Ajout d'un espace -->

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_SESSION['nom'])){
+if(!isset($_SESSION['nom']) || $_SESSION['admin'] != 1){
   header('location:connexion.php');
 }
 include "../inc/functions.php";

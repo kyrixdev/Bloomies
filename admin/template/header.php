@@ -47,6 +47,6 @@
     </div>
 
     <!-- Bouton de déconnexion -->
-    <a class="btn btn-outline-light" href="deconnexion.php">Déconnexion</a>
+    <a class="btn btn-outline-light" href="../../deconnexion.php">Déconnexion</a>
 
   </header>

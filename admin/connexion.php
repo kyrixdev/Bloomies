@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-if(isset($_SESSION['nom'])){
+if(isset($_SESSION['nom']) && $_SESSION['admin'] == 1){
 
   header('location:index.php');
 
@@ -17,11 +17,11 @@ if (!empty($_POST)) {
   $user = ConnectAdmin($conn, $_POST);
   if ($user !== false) {
       session_start();
-      $_SESSION['id']= $user['id'];
-      $_SESSION['email'] = $user['email'];
-      $_SESSION['nom'] = $user['nom'];
-      $_SESSION['prenom'] = $user['prenom'];
-      $_SESSION['mp'] = $user['mp'];
+      $_SESSION['adminid']= $user['id'];
+      $_SESSION['adminemail'] = $user['email'];
+      $_SESSION['adminnom'] = $user['nom'];
+      $_SESSION['adminprenom'] = $user['prenom'];
+      $_SESSION['admin'] = 1;
     
       header('location:index.php');
   }}

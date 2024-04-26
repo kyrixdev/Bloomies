@@ -31,27 +31,29 @@ include "inc/header.php";
       <!--fin nav-->
 <div class="col-5 mx-auto p-5">
     <h1 class="text-center">Registre</h1>
-    <form action="registre.php" method="post">
+    <div class="alert alert-danger" role="alert" id="alert" style="display: none">
+        </div>
+    <form action="registre.php" method="post"  onsubmit="return validateRegisterForm()">
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"> Nom </label>
-            <input type="text" name="nom"  class="form-control" id="exampleInputPassword1">
+            <label for="nom" class="form-label"> Nom </label>
+            <input type="text" name="nom"  class="form-control" id="nom">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"> Prenom </label>
-            <input type="text"  name="prenom"  class="form-control" id="exampleInputPassword1">
+            <label for="prenom" class="form-label"> Prenom </label>
+            <input type="text"  name="prenom"  class="form-control" id="prenom">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Telephone </label>
-            <input type="text" name="telephone"  class="form-control" id="exampleInputPassword1">
+            <label for="telephone" class="form-label">Telephone </label>
+            <input type="text" name="telephone"  class="form-control" id="telephone">
           </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" name="email" class="form-control" id="email">
           
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Mot de passe </label>
-          <input type="password" name="mp"  class="form-control" id="exampleInputPassword1">
+          <label for="mp" class="form-label">Mot de passe </label>
+          <input type="password" name="mp"  class="form-control" id="password">
         </div>
         
         <button type="submit" class="btn btn-login w-100">Envoyer</button>
