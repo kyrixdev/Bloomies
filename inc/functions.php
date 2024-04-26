@@ -121,7 +121,7 @@ function getProduitByCategorie($conn,$id){
 function AddVisiteur($conn, $data) {
     $mphash = md5($data['mp']); // Utilisation correcte de la variable $data['mp']
 
-    $requette = "INSERT INTO visiteurs (nom, prenom, email, mp, telephone) VALUES ('$data[nom]', '$data[prenom]', '$data[email]', '$mphash', '$data[telephone]')";
+    $requette = "INSERT INTO visiteurs (nom, prenom, email, mp, telephone, etat) VALUES ('$data[nom]', '$data[prenom]', '$data[email]', '$mphash', '$data[telephone]', etat=0)";
     
     $resultat = $conn->query($requette);
 

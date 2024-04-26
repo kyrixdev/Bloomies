@@ -21,7 +21,7 @@
 <body>
 <header>
   <nav class="navbar navbar-expand-lg">
-    <div class="container">
+    <div class="container-fluid mx-4">
       <a class="navbar-brand" href="index.php">
         <img src="./images/logo-v.png" alt="Bloomie's Flower Shop" />
       </a>

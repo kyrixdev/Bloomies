@@ -22,14 +22,14 @@ include "inc/header.php";
     <div class="col-lg-6">
       <h1>Let's make <br> beautiful flowers a part of your life.</h1>
       <p>Flowers are the music of the ground. From earth's lips spoken without sound.</p>
-      <button class="btn btn-primary">Shop Now</button>
+      <a herf="#shop" class="btn btn-primary">Shop Now</a>
     </div>
     <div class="col-lg-6 text-center">
       <img src="images/hero-asset.png" alt="hero" class="img-fluid w-50 ">
     </div>
   </div>
 </section>
-<section class="products">
+<section class="products" id="shop">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">

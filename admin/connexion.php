@@ -68,7 +68,7 @@ if (!empty($_POST)) {
        <!--footer-->
        <?php
    
-   include "../inc/footer.php";
+   include "template/footer.php";
     
 
     ?>

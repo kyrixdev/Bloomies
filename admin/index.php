@@ -67,9 +67,6 @@ $TotalPorduits = count($produits);
     </p>
 
 </div>
-
-
-
 <?php
 include "template/footer.php";
 ?>

@@ -28,7 +28,7 @@ section.hero h1{
   font-size: 1.2rem;
 
 }
-.hero button{
+.hero a{
   font-size: 1.2rem;
   font-weight: 500;
   padding: 10px 20px;
@@ -38,7 +38,7 @@ section.hero h1{
   border: none;
   cursor: pointer;
 }
-.hero button:hover{
+.hero a:hover{
   background-color: #124a31;
 }
 .feature{

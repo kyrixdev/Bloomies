@@ -113,6 +113,12 @@ include "../template/header.php";
             visiteur validee avec success
               </div>';
                   }
+                  if(isset($_GET['delete']) && $_GET['delete'] =="ok" ){
+
+                    print'<div class="alert alert-success">
+                    visiteur supprimee avec success
+                      </div>';
+                          }
                  ?>
       <table class="table">
           <thead>
@@ -137,6 +143,9 @@ include "../template/header.php";
                      <th scope="row">'.$i.'</th>
                      <td>'.$user['nom'].' '.$user['prenom'].'</td>
                      <td>'.$user['email'].'</td>
+                     <td>            
+                        <a href="supprimer.php?id='.$user['id'].'"  class="btn btn-danger">Supprimer</a>                                         
+                    </td>
                    </tr>';
 
           }

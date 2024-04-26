@@ -93,7 +93,7 @@ include "../template/header.php";
           foreach($produits as $i => $p){
               $CategorieById = getCategorieById($conn, $p['categorie']);
             
-            $i++;
+               $i++;
 
                      print'<tr>
                      <th scope="row">'.$i.'</th>

@@ -20,7 +20,7 @@ include "inc/header.php";
     <div class="col-lg-6">
       <h1>Let's make <br> beautiful flowers a part of your life.</h1>
       <p>Flowers are the music of the ground. From earth's lips spoken without sound.</p>
-      <button class="btn btn-primary">Shop Now</button>
+      <a href="#shop" class="btn btn-primary">Shop Now</a>
     </div>
     <div class="col-lg-6 text-center">
       <img src="images/hero-asset.png" alt="hero" class="img-fluid w-50 ">
@@ -54,7 +54,7 @@ include "inc/header.php";
     </div>
   </div>
 </div>
-<section class="categories container">
+<section class="categories container" id="shop">
   <h2 class="text-center">Shop by Category</h2>
   <p class="text-center">Choose from our wide range of categories</p>
   <div class="row col-12 mt-4">
